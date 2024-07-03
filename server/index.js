@@ -10,11 +10,10 @@ const Document = require("./Document");
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // };
+require("dotenv").config();
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(
-      "mongodb+srv://chetan3587:ChetanSerikar@cluster0.3pdfput.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`Mongodb connected : ${conn.connection.host}`);
   } catch (error) {
     console.log(error.message);
