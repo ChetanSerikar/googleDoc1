@@ -24,7 +24,8 @@ const TextEditor = () => {
   console.log(documentId);
 
   useEffect(() => {
-    const s = io("http://localhost:3001");
+    // const s = io("http://localhost:3001");
+    const s = io("https://google-doc-api.vercel.app/3001");
     setSocket(s);
 
     return () => {
